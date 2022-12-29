@@ -1,8 +1,15 @@
 {
-  "name": "root",
+  "name": "expresiondigitaltv",
   "private": true,
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "dev-web": "lerna run dev --scope=web",
+    "dev-studio": "lerna run dev --scope=studio",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "workspaces": [
-    "packages/*"
+    "studio",
+    "web"
   ],
   "devDependencies": {
     "lerna": "^6.3.0"

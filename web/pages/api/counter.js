@@ -7,8 +7,6 @@ export default function handler(req, res) {
   const filePath = path.resolve(__dirname, "../../../../db/", "counter.txt");
   let count = 42873;
 
-  console.log("requesting");
-
   if (fs.existsSync(filePath)) {
     try {
       const data = fs.readFileSync(filePath, "utf-8");
