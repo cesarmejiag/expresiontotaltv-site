@@ -1,0 +1,54 @@
+.navigation {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: none;
+  border-color: #e7ebf0;
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: thin;
+  justify-content: center;
+  height: 70px;
+}
+
+.logoDrawer {
+  height: 44px;
+  margin: 16px auto;
+  position: relative;
+  width: 183px;
+}
+
+.toolbar {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.logo {
+  height: 44px;
+  position: relative;
+  width: 183px;
+}
+
+.list {
+  display: none;
+}
+
+.list a {
+  margin-left: 24px;
+}
+
+/* md breakpoint */
+@media screen and (min-width: 900px) {
+  .navigation {
+    height: 100px;
+  }
+
+  .logo {
+    height: 60px;
+    width: 253px;
+  }
+
+  .list {
+    display: block;
+  }
+}
