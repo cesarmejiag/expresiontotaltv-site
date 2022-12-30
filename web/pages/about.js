@@ -1,5 +1,5 @@
-import Layout from "../../components/layout";
-import Section from "../../components/section";
+import Layout from "../components/layout";
+import Section from "../components/section";
 
 export default function About() {
   return (

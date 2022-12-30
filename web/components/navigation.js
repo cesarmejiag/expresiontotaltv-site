@@ -29,15 +29,17 @@ export default function Navigation(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box className={styles.logoDrawer}>
-        <Image
-          priority
-          src={logoSrc}
-          fill={true}
-          alt="Expresion Total TV"
-          sizes="183px"
-        />
-      </Box>
+      <Link href="/">
+        <Box className={styles.logoDrawer}>
+          <Image
+            priority
+            src={logoSrc}
+            fill={true}
+            alt="Expresion Total TV"
+            sizes="183px"
+          />
+        </Box>
+      </Link>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -66,15 +68,17 @@ export default function Navigation(props) {
           edge="start"
         >
           <Box sx={{ flexGrow: 1 }}>
-            <Box className={styles.logo}>
-              <Image
-                priority
-                src={logoSrc}
-                fill={true}
-                alt="Expresion Total TV"
-                sizes="183px"
-              />
-            </Box>
+            <Link href="/">
+              <Box className={styles.logo}>
+                <Image
+                  priority
+                  src={logoSrc}
+                  fill={true}
+                  alt="Expresion Total TV"
+                  sizes="183px"
+                />
+              </Box>
+            </Link>
           </Box>
           <Box className={styles.list}>
             {navItems.map((item) => (
