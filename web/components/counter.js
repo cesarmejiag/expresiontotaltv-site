@@ -26,6 +26,7 @@ export default function Counter() {
 
   return (
     <Box sx={{ margin: "0 auto", maxWidth: "300px", p: 2, width: "100%" }}>
+      <Typography align="center" component="div" variant="h6">Visitors</Typography>
       <Typography
         align="center"
         component="div"

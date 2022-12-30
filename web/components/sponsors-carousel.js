@@ -1,18 +1,40 @@
+import PropTypes from "prop-types";
+import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import Sponsor from "./sponsor";
 
-export default function SponsorsCarousel() {
+import styles from "./sponsors-carousel.module.css";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+// Reference: https://swiperjs.com/react
+export default function SponsorsCarousel({ items, delay }) {
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      navigation
+      autoplay={{ delay: delay, disableOnInteraction: true }}
+      className={styles.sponsors}
+      loop={true}
+      modules={[Autoplay, Navigation]}
+      slidesPerView={4}
+      spaceBetween={16}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      {items.map((item) => (
+        <SwiperSlide key={item.alt}>
+          <Sponsor src={item.src} alt={item.alt} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
+
+SponsorsCarousel.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+  delay: PropTypes.number,
+};
+
+SponsorsCarousel.defaultProps = {
+  items: [],
+  delay: 5000,
+};

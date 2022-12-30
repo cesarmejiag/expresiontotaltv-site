@@ -26,7 +26,7 @@ Section.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
   bgColor: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.any,
 };
 
 Section.defaultProps = {
