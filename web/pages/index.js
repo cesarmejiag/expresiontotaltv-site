@@ -62,9 +62,9 @@ const sponsors = [
   },
 ];
 
-export default function Home() {
+export default function Home({ config }) {
   return (
-    <Layout>
+    <Layout config={config}>
       <Counter />
       <Section bgColor="#ffffff">
         <Grid container spacing={2}>

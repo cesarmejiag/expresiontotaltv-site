@@ -19,12 +19,10 @@ import styles from "./navigation.module.css";
 import logoSrc from "../public/assets/images/logo.jpg";
 
 const drawerWidth = 240;
-const navItems = ["Quiénes Somos", "Galería", "Contacto"];
 
-export default function Navigation(props) {
+export default function Navigation({ navItems, logo }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
-
   const container = typeof window !== "undefined" ? document.body : undefined;
 
   const drawer = (
@@ -42,10 +40,14 @@ export default function Navigation(props) {
       </Link>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item}>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item}></ListItemText>
+        {navItems.map(({ _id, title, slug }) => (
+          <ListItem key={`mobile-${_id}`}>
+            <ListItemButton
+              component="a"
+              href={slug.current}
+              sx={{ textAlign: "center" }}
+            >
+              <ListItemText primary={title}></ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
@@ -81,9 +83,17 @@ export default function Navigation(props) {
             </Link>
           </Box>
           <Box className={styles.list}>
-            {navItems.map((item) => (
-              <Link key={item} href="/">
-                {item}
+            {navItems.map(({ _id, title, slug }) => (
+              <Link
+                key={_id}
+                href={{
+                  pathname: "",
+                  query: { slug: slug.current },
+                }}
+                as={`/${slug.current}`}
+                prefetch
+              >
+                {title}
               </Link>
             ))}
             <Button href="/" variant="contained">

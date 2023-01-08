@@ -1,21 +1,40 @@
-import Link from "next/link";
+import PropTypes from "prop-types";
 import { Box, Container, Grid } from "@mui/material";
+import Link from "next/link";
+import { useRouter, withRouter } from "next/router";
 import styles from "./footer.module.css";
+import SimpleBlockContent from "./simple-block-content";
 
-export default function Footer() {
+function Footer({ navItems, text }) {
+  const { pathname, query } = useRouter();
   return (
     <div className={styles.footer}>
       <Container maxWidth="lg">
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} sm={6}>
             <Box sx={{ textAlign: { xs: "center", sm: "left" } }}>
-              <div>Expresión Total TV</div>
-              <div>Todos los derechos reservados</div>
+              <SimpleBlockContent blocks={text} />
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Box sx={{ textAlign: { xs: "center", sm: "right" } }}>
-              <Link href="/">Aviso de privacidad</Link>
+              {navItems &&
+                navItems.map((item) => {
+                  /* const isActive =
+                    pathname === "/" && query.slug === item.slug.current; */
+                  return (
+                    <Link
+                      href={{
+                        pathname: "/",
+                        query: { slug: item.slug.current },
+                      }}
+                      as={`/${item.slug.current}`}
+                      prefetch
+                    >
+                      Aviso de privacidad
+                    </Link>
+                  );
+                })}
             </Box>
           </Grid>
         </Grid>
@@ -23,3 +42,17 @@ export default function Footer() {
     </div>
   );
 }
+
+Footer.propTypes = {
+  navItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      slug: PropTypes.shape({
+        current: PropTypes.string,
+      }).isRequired,
+    })
+  ),
+  text: PropTypes.arrayOf(PropTypes.object),
+};
+
+export default withRouter(Footer);

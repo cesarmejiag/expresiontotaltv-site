@@ -1,9 +1,9 @@
 import Layout from "../components/layout";
 import Section from "../components/section";
 
-export default function Gallery() {
+export default function Gallery({ config }) {
   return (
-    <Layout>
+    <Layout config={config}>
       <Section>Gallery</Section>
     </Layout>
   );
