@@ -1,5 +1,5 @@
-import { createClient } from "next-sanity";
-export default createClient({
+const { createClient } = require("next-sanity");
+module.exports = createClient({
   projectId: "01ptukrd",
   dataset: "production",
   token: "", // or leave blank to be anonymous user

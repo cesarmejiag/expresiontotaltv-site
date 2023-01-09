@@ -19,17 +19,17 @@ function Footer({ navItems, text }) {
           <Grid item xs={12} sm={6}>
             <Box sx={{ textAlign: { xs: "center", sm: "right" } }}>
               {navItems &&
-                navItems.map((item) => {
+                navItems.map(({ _id, slug }) => {
                   /* const isActive =
                     pathname === "/" && query.slug === item.slug.current; */
                   return (
                     <Link
+                      key={`footer-${_id}`}
                       href={{
-                        pathname: "/",
-                        query: { slug: item.slug.current },
+                        pathname: "/LandingPage",
+                        query: { slug: slug.current },
                       }}
-                      as={`/${item.slug.current}`}
-                      prefetch
+                      as={`/${slug.current}`}
                     >
                       Aviso de privacidad
                     </Link>

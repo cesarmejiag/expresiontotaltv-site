@@ -87,11 +87,10 @@ export default function Navigation({ navItems, logo }) {
               <Link
                 key={_id}
                 href={{
-                  pathname: "",
+                  pathname: "/LandingPage",
                   query: { slug: slug.current },
                 }}
                 as={`/${slug.current}`}
-                prefetch
               >
                 {title}
               </Link>
