@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import { Box, Container, Grid } from "@mui/material";
 import Link from "next/link";
 import { useRouter, withRouter } from "next/router";
-import styles from "./footer.module.css";
-import SimpleBlockContent from "./simple-block-content";
+import styles from "footer.module.css";
+import SimpleBlockContent from "simple-block-content";
 
 function Footer({ navItems, text }) {
   const { pathname, query } = useRouter();

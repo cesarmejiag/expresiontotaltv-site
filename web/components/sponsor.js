@@ -1,7 +1,7 @@
 import { Card, CardMedia, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
-import styles from "./sponsor.module.css";
+import styles from "sponsor.module.css";
 
 export default function Sponsor({ src, alt }) {
   return (

@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./navigation.module.css";
+import styles from "navigation.module.css";
 import logoSrc from "../public/assets/images/logo.jpg";
 
 const drawerWidth = 240;
