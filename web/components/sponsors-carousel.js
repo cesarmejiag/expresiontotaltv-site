@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Sponsor from "sponsor";
+import Sponsor from "./sponsor";
 
-import styles from "sponsors-carousel.module.css";
+import styles from "./sponsors-carousel.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";

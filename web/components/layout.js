@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Script from "next/script";
-import Footer from "footer";
-import Navigation from "navigation";
-import styles from "layout.module.css";
+import Footer from "./footer";
+import Navigation from "./navigation";
+import styles from "./layout.module.css";
 
 export default function Layout({ config, children }) {
   if (!config) {

@@ -1,6 +1,6 @@
 import { Container, Grid, Typography } from "@mui/material";
 import PropTypes from "prop-types";
-import styles from "section.module.css";
+import styles from "./section.module.css";
 
 export default function Section({ title, intro, bgColor, children }) {
   return (

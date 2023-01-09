@@ -1,7 +1,7 @@
 import { Card, CardMedia, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
-import styles from "video.module.css";
+import styles from "./video.module.css";
 
 export default function Video({ src }) {
   return (
