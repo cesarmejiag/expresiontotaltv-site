@@ -151,7 +151,7 @@ export default function LandingPage({ config, content }) {
   );
 }
 
-LandingPage.getInitialProps = async function ({ query }) {
+/* LandingPage.getInitialProps = async function ({ query }) {
   const { slug } = query;
   if (!query) {
     console.error("no query");
@@ -185,7 +185,7 @@ LandingPage.getInitialProps = async function ({ query }) {
     return { ...res.frontpage, slug };
   }
   return null;
-};
+}; */
 
 LandingPage.propTypes = {
   title: PropTypes.string,

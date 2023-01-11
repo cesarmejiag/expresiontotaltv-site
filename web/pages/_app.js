@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-App.getInitialProps = async ({ Component, ctx }) => {
+/* App.getInitialProps = async ({ Component, ctx }) => {
   let pageProps = {};
 
   if (Component.getInitialProps) {
@@ -36,4 +36,4 @@ App.getInitialProps = async ({ Component, ctx }) => {
     pageProps.config = config;
   }
   return { pageProps };
-};
+}; */
