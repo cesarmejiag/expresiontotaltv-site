@@ -23,7 +23,7 @@ export default function RenderSections({ sections }) {
       {sections.map((section) => {
         const SectionComponent = resolveSections(section);
         if (!SectionComponent) {
-          return <div>Missing section {section._type}</div>;
+          return <div key={section._key}>Missing section {section._type}</div>;
         }
         return (
           <SectionComponent {...section} key={section._key}></SectionComponent>
