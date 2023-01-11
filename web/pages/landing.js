@@ -1,4 +1,5 @@
-import PropTypes from "prop-types";
+import Layout from "../components/layout";
+/* import PropTypes from "prop-types";
 import NextSeo from "next-seo";
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
@@ -23,12 +24,12 @@ const pageQuery = groq`
     }
   }
 }
-`;
+`; */
 
 export default function Landing({ config }) {
   return <Layout config={config}>Landing</Layout>;
 }
-
+/* 
 Landing.getInitialProps = async function ({ query }) {
   const { slug } = query;
   if (!query) {
@@ -75,3 +76,4 @@ Landing.propTypes = {
   config: PropTypes.any,
   slug: PropTypes.any,
 };
+ */
