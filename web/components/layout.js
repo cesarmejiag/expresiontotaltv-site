@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Script from "next/script";
+import Navigation from "./navigation";
 import Footer from "./footer";
-import styles from "./../styles/layout.module.css";
+import styles from "../styles/layout.module.css";
 
 export default function Layout({ config, children }) {
   if (!config) {
@@ -39,7 +40,7 @@ export default function Layout({ config, children }) {
               `,
         }}
       />
-
+      <Navigation navItems={mainNavigation} logo={logo} />
       <div className={styles.outerWrapper}>{children}</div>
       <Footer navItems={footerNavigation} text={footerText} />
     </>

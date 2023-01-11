@@ -43,7 +43,7 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  exportPathMap: async function () {
+  /* exportPathMap: async function () {
     const res = await client.fetch(query);
     const { routes = [] } = res;
     const nextRoutes = {
@@ -52,7 +52,7 @@ const nextConfig = {
       "/custom-page": { page: "/custom" },
     };
     return nextRoutes;
-  },
+  }, */
 };
 
 module.exports = nextConfig;

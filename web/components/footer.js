@@ -13,7 +13,8 @@ function Footer({ navItems, text }) {
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} sm={6}>
             <Box sx={{ textAlign: { xs: "center", sm: "left" } }}>
-              SimpleBlockContent
+              <p>Expresión Total TV</p>
+              <p>Todos los derechos reservados</p>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>

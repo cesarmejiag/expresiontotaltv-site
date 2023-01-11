@@ -1,0 +1,25 @@
+.sponsor {
+  position: relative;
+}
+
+.sponsor::before {
+  content: "";
+  display: block;
+  padding-bottom: 68.75%;
+}
+
+.image {
+  height: 100%;
+  left: 0;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.text {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
