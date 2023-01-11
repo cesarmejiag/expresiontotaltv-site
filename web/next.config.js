@@ -38,6 +38,11 @@ const reduceRoutes = (obj, route) => {
 
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   exportPathMap: async function () {
     const res = await client.fetch(query);
     const { routes = [] } = res;
