@@ -19,6 +19,7 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
     "groq": "^2.33.2",
+    "lodash": "^4.17.21",
     "next": "13.0.6",
     "next-sanity": "^3.1.9",
     "next-seo": "^5.15.0",

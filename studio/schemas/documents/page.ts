@@ -20,6 +20,7 @@ export default {
       title: 'Page sections',
       of: [
         // TODO: Create sections
+        {type: 'stream'},
       ],
     },
     {

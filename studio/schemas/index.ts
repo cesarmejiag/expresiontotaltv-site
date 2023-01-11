@@ -8,6 +8,7 @@ import embedHTML from './objects/embedHTML'
 import internalLink from './objects/internalLink'
 import link from './objects/link'
 import simplePortableText from './objects/simplePortableText'
+import stream from './objects/stream'
 
 export const schemaTypes = [
   embedHTML,
@@ -17,4 +18,5 @@ export const schemaTypes = [
   route,
   simplePortableText,
   siteConfig,
+  stream,
 ]

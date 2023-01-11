@@ -9,7 +9,7 @@ const hiddenDocTypes = (listItem: any) =>
 
 export default defineConfig({
   name: 'default',
-  title: 'expresiontotaltv',
+  title: 'Expresión Total TV',
 
   projectId: '01ptukrd',
   dataset: 'production',
