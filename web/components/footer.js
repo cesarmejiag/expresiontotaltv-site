@@ -22,7 +22,7 @@ function Footer({ navItems, text }) {
               {navItems &&
                 navItems.map(({ _id, slug }) => {
                   const isActive =
-                    pathname === "/" && query.slug === item.slug.current;
+                    pathname === "/" && query.slug === slug.current;
                   return (
                     <Link
                       key={`footer-${_id}`}
