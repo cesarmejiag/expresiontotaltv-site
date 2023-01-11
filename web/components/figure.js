@@ -5,8 +5,10 @@ import client from "../client";
 
 const builder = imageUrlBuilder(client);
 
+// TODO: Fix here
 export default function Figure({ alt, caption, asset }) {
-  return asset ? (
+  return <div>Here goes an image</div>;
+  /* return asset ? (
     <figure className={styles.content}>
       <img
         alt={alt}
@@ -23,7 +25,7 @@ export default function Figure({ alt, caption, asset }) {
         </figcaption>
       )}
     </figure>
-  ) : undefined;
+  ) : undefined; */
 }
 
 Figure.propTypes = {

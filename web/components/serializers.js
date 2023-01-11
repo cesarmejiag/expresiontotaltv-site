@@ -1,9 +1,10 @@
 import EmbedHTML from "./EmbedHTML";
 import Figure from "./Figure";
 
+// TODO: Fix here
 export default {
-  types: {
+  /* types: {
     embedHTML: EmbedHTML,
     figure: Figure,
-  },
+  }, */
 };

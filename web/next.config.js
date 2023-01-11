@@ -40,16 +40,15 @@ const reduceRoutes = (obj, route) => {
 
 const nextConfig = {
   reactStrictMode: true,
-  exportPathMap: function () {
-    return client.fetch(query).then((res) => {
-      const { routes = [] } = res;
-      const nextRoutes = {
-        // Routes imported from sanity
-        ...routes.filter(({ slug }) => slug.current).reduce(reduceRoutes, {}),
-        "/custom-page": { page: "/CustomPage" },
-      };
-      return nextRoutes;
-    });
+  exportPathMap: async function () {
+    const res = await client.fetch(query);
+    const { routes = [] } = res;
+    const nextRoutes = {
+      // Rotues imported from sanity
+      ...routes.filter(({ slug }) => slug.current).reduce(reduceRoutes, {}),
+      "/custom-page": { page: "/CustomPage" },
+    };
+    return nextRoutes;
   },
 };
 
