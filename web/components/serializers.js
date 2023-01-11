@@ -1,5 +1,5 @@
-import EmbedHTML from "./EmbedHTML";
-import Figure from "./Figure";
+// import EmbedHTML from "./EmbedHTML";
+// import Figure from "./Figure";
 
 // TODO: Fix here
 export default {
