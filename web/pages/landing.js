@@ -1,5 +1,4 @@
-import Layout from "../components/layout";
-/* import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import NextSeo from "next-seo";
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
@@ -7,7 +6,7 @@ import client from "../client";
 import Layout from "../components/layout";
 
 const builder = imageUrlBuilder(client);
-const pageQuery = groq`
+const pageQuery = `
 *[_type == "route" && slug.current == $slug][0]{
   page-> {
     ...,
@@ -24,12 +23,12 @@ const pageQuery = groq`
     }
   }
 }
-`; */
+`;
 
 export default function Landing({ config }) {
   return <Layout config={config}>Landing</Layout>;
 }
-/* 
+
 Landing.getInitialProps = async function ({ query }) {
   const { slug } = query;
   if (!query) {
@@ -43,7 +42,7 @@ Landing.getInitialProps = async function ({ query }) {
   }
   // Frontpage
   if (slug && slug === "/") {
-    const res = client.fetch(groq`
+    const res = client.fetch(`
       *[_id == "global-config"][0] {
         frontpage -> {
           ...,
@@ -76,4 +75,3 @@ Landing.propTypes = {
   config: PropTypes.any,
   slug: PropTypes.any,
 };
- */

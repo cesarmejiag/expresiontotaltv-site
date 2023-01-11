@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
+import Footer from "./footer";
 import styles from "./../styles/layout.module.css";
 
 export default function Layout({ config, children }) {
@@ -40,6 +41,7 @@ export default function Layout({ config, children }) {
       />
 
       <div className={styles.outerWrapper}>{children}</div>
+      <Footer navItems={footerNavigation} text={footerText} />
     </>
   );
 }
