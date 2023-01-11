@@ -1,4 +1,5 @@
 import client from "../client";
+import "../styles/globals.css";
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
