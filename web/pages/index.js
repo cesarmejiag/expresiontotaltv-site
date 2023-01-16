@@ -5,8 +5,8 @@ import client from "../client";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = `
-  *[_type == "route" && slug.current == $slug][0]{
-    page-> {
+  *[_id == "global-config"][0] {
+    frontpage -> {
       ...,
       content[] {
         ...,
@@ -23,45 +23,14 @@ const pageQuery = `
   }
 `;
 
-export default function Home({ config, content }) {
+export default function Home({ config }) {
   console.log(config);
   return <div>Home</div>;
 }
 
-Home.getInitialProps = async function ({ query }) {
-  const { slug } = query;
-  if (!query) {
-    console.log("no query");
-    return;
-  }
-  // Internal
-  if (slug && slug !== "/") {
-    const res = await client.fetch(pageQuery, { slug });
-    return { ...res.page, slug };
-  }
-  // Frontpage
-  if (slug && slug === "/") {
-    const res = client.fetch(`
-      *[_id == "global-config"][0] {
-        frontpage -> {
-          ...,
-          content[] {
-            ...,
-            cta {
-              ...,
-              route->
-            },
-            ctas[] {
-              ...,
-              route->
-            }
-          }
-        }
-      }
-    `);
-    return { ...res.frontpage, slug };
-  }
-  return null;
+Home.getInitialProps = async function () {
+  const res = client.fetch(pageQuery);
+  return { ...res.frontpage, slug: "/" };
 };
 
 Home.propTypes = {

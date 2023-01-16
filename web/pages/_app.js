@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-App.getInitialProps = async ({ Component, ctx }) => {
+App.getInitialProps = async function ({ Component, ctx }) {
   let pageProps = {};
 
   if (Component.getInitialProps) {

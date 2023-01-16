@@ -31,7 +31,7 @@ const reduceRoutes = (obj, route) => {
     disallowRobot,
     _createdAt,
     _updatedAt,
-    page: "/landing",
+    page: "/",
   };
   return obj;
 };
