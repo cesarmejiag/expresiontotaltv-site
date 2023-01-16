@@ -24,6 +24,7 @@ const pageQuery = `
 `;
 
 export default function Home({ config, content }) {
+  console.log(config);
   return <div>Home</div>;
 }
 
