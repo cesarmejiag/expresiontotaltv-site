@@ -1,9 +1,0 @@
-.outerWrapper {
-  margin-top: 70px;
-}
-
-@media screen and (min-width: 900px) {
-  .outerWrapper {
-    margin-top: 100px;
-  }
-}

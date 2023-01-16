@@ -20,14 +20,14 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-/* App.getInitialProps = async ({ Component, ctx }) => {
+App.getInitialProps = async ({ Component, ctx }) => {
   let pageProps = {};
 
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
 
-  // Add site config from sanity
+  // Add site config from sanity.
   const config = await client.fetch(siteConfigQuery);
   if (!config) {
     return { pageProps };
@@ -36,4 +36,4 @@ export default function App({ Component, pageProps }) {
     pageProps.config = config;
   }
   return { pageProps };
-}; */
+};
