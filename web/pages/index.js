@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import NextSeo from "next-seo";
 import imageUrlBuilder from "@sanity/image-url";
 import client from "../client";
+import Layout from "../components/layout";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = `
@@ -24,8 +25,7 @@ const pageQuery = `
 `;
 
 export default function Home({ config }) {
-  console.log(config);
-  return <div>Home</div>;
+  return <Layout config={config}>holi</Layout>;
 }
 
 Home.getInitialProps = async function () {
