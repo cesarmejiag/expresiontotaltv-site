@@ -1,4 +1,4 @@
-// import bcp47 from 'bcp47'
+import {parse} from 'bcp-47'
 
 export default {
   name: 'site-config',
@@ -18,6 +18,20 @@ export default {
       title: 'URL',
       type: 'string',
       description: 'The main site url. Used to create canonical url.',
+    },
+    {
+      name: 'frontpage',
+      type: 'reference',
+      description: 'Choose page to be the frontpage',
+      to: {type: 'page'},
+    },
+    {
+      title: 'Site language',
+      description: 'Should be a valid bcp47 language code like en, en-US, no or nb-NO',
+      name: 'lang',
+      type: 'string',
+      validation: (Rule: any) =>
+        Rule.custom((lang: any) => (parse(lang) ? true : 'Please use a valid bcp47 code')),
     },
     {
       description: 'Best choice is to use an SVG where the color are set with currentColor',

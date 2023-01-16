@@ -27,6 +27,12 @@ export default {
       title: 'Include page in sitemap',
       description: 'Hide this route for search engines',
     },
+    {
+      name: 'disallowRobots',
+      type: 'boolean',
+      title: 'Disallow in robots.txt',
+      description: 'Hide this route for search engines',
+    },
   ],
   preview: {
     select: {
