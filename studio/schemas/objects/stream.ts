@@ -4,14 +4,21 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'url',
+      name: 'src',
       type: 'string',
-      title: 'URL',
+      title: 'Stream Source',
+    },
+    {
+      name: 'sponsors',
+      type: 'array',
+      title: 'Sponsors',
+      of: [{type: 'sponsor'}],
+      validation: (Rule: any) => Rule.required().max(3),
     },
   ],
   preview: {
     select: {
-      title: 'url',
+      title: 'src',
     },
     prepare({title}: any) {
       return {

@@ -21,6 +21,7 @@ export default {
       of: [
         // TODO: Create sections
         {type: 'stream'},
+        {type: 'visitCounter'},
       ],
     },
     {

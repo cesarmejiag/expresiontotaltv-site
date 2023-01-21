@@ -3,6 +3,7 @@ import NextSeo from "next-seo";
 import imageUrlBuilder from "@sanity/image-url";
 import client from "../client";
 import Layout from "../components/layout";
+import RenderSections from "../components/renderSections";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = `
@@ -24,12 +25,16 @@ const pageQuery = `
   }
 `;
 
-export default function Home({ config }) {
-  return <Layout config={config}>holi</Layout>;
+export default function Home({ config, content }) {
+  return (
+    <Layout config={config}>
+      {content && <RenderSections sections={content} />}
+    </Layout>
+  );
 }
 
 Home.getInitialProps = async function () {
-  const res = client.fetch(pageQuery);
+  const res = await client.fetch(pageQuery);
   return { ...res.frontpage, slug: "/" };
 };
 

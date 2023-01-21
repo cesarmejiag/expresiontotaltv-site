@@ -5,7 +5,6 @@ import * as SectionComponents from "./sections";
 
 function resolveSections(section) {
   const Section = SectionComponents[upperFirst(section._type)];
-
   if (Section) {
     return Section;
   }

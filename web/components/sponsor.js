@@ -1,9 +1,15 @@
 import { Card, CardMedia, Typography } from "@mui/material";
+import imageUrlBuilder from "@sanity/image-url";
 import PropTypes from "prop-types";
+import client from "../client";
+import Image from "next/image";
 
 import styles from "../styles/sponsor.module.css";
 
-export default function Sponsor({ src, alt }) {
+const builder = imageUrlBuilder(client);
+
+export default function Sponsor({ image, alt }) {
+  const src = builder.image(image).url();
   return (
     <Card className={styles.sponsor}>
       {src.length > 0 && (
@@ -11,7 +17,7 @@ export default function Sponsor({ src, alt }) {
           alt={alt}
           className={styles.image}
           component="img"
-          src={src}
+          image={src}
           sx={{ p: 2 }}
         />
       )}
@@ -25,11 +31,12 @@ export default function Sponsor({ src, alt }) {
 }
 
 Sponsor.propTypes = {
-  src: PropTypes.string,
+  image: PropTypes.any,
+  caption: PropTypes.string,
   alt: PropTypes.string,
 };
 
 Sponsor.defaultProps = {
-  src: "",
+  caption: "",
   alt: "",
 };
