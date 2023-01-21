@@ -18,11 +18,7 @@ export default {
       name: 'content',
       type: 'array',
       title: 'Page sections',
-      of: [
-        // TODO: Create sections
-        {type: 'stream'},
-        {type: 'visitCounter'},
-      ],
+      of: [{type: 'stream'}, {type: 'visitCounter'}, {type: 'carousel'}, {type: 'list'}],
     },
     {
       name: 'description',

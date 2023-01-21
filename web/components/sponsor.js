@@ -2,7 +2,6 @@ import { Card, CardMedia, Typography } from "@mui/material";
 import imageUrlBuilder from "@sanity/image-url";
 import PropTypes from "prop-types";
 import client from "../client";
-import Image from "next/image";
 
 import styles from "../styles/sponsor.module.css";
 
