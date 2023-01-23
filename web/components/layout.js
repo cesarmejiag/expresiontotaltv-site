@@ -12,7 +12,6 @@ export default function Layout({ config, children }) {
 
   const { title, mainNavigation, footerNavigation, footerText, logo, url } =
     config;
-  const logoUrl = logo && logo.asset && logo.asset.url;
 
   return (
     <>

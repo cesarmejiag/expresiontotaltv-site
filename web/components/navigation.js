@@ -16,11 +16,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/navigation.module.css";
-import logoSrc from "../public/assets/images/logo.jpg";
 
 const drawerWidth = 240;
 
 export default function Navigation({ navItems, logo }) {
+  const logoSrc = logo && logo.asset && logo.asset.url;
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
   const container = typeof window !== "undefined" ? document.body : undefined;
@@ -87,7 +87,7 @@ export default function Navigation({ navItems, logo }) {
               <Link
                 key={_id}
                 href={{
-                  pathname: "/LandingPage",
+                  pathname: "[slug]",
                   query: { slug: slug.current },
                 }}
                 as={`/${slug.current}`}
