@@ -4,6 +4,16 @@ export default {
   type: 'object',
   fields: [
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLenght: 200,
+        slugify: (input: any) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      },
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
