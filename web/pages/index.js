@@ -26,6 +26,7 @@ const pageQuery = `
 `;
 
 export default function Home({ config, content }) {
+  console.log(content);
   return (
     <Layout config={config}>
       {content && <RenderSections sections={content} />}

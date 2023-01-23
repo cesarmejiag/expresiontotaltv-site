@@ -8,7 +8,10 @@ import styles from "../styles/sponsor.module.css";
 const builder = imageUrlBuilder(client);
 
 export default function Sponsor({ image, alt }) {
-  const src = builder.image(image).url();
+  let src = "";
+  if (image) {
+    src = builder.image(image).url();
+  }
   return (
     <Card className={styles.sponsor}>
       {src.length > 0 && (

@@ -8,8 +8,18 @@ import {
   IconButton,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import Host from "../parts/host";
+import Section from "../section";
 
-export default function List({ items, component: Item }) {
+/*
+{filteredItems.map((item, index) => (
+          <Grid key={`Item-${index}`} item xs={12} sm={6} md={3}>
+            <Item {...item} />
+          </Grid>
+        ))}
+ */
+
+export default function List({ items }) {
   const [filteredItems, setFilteredItems] = useState(items);
   const filter = ({ target }) => {
     if (target.value.length > 0) {
@@ -25,7 +35,7 @@ export default function List({ items, component: Item }) {
   };
 
   return (
-    <div>
+    <Section title="Conductores" bgColor="#eeeeee">
       <Grid container justifyContent="flex-end" spacing={2} sx={{ mb: 2 }}>
         <Grid item xs={12} sm={3}>
           <FormControl
@@ -52,11 +62,16 @@ export default function List({ items, component: Item }) {
       </Grid>
       <Grid container spacing={2}>
         {filteredItems.map((item, index) => (
-          <Grid key={`Item-${index}`} item xs={12} sm={6} md={3}>
-            <Item {...item} />
+          <Grid key={item._key} item xs={12} sm={6} md={3}>
+            <Host
+              image={item.image}
+              name={item.name}
+              desc={item.desc}
+              url="/"
+            />
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Section>
   );
 }
