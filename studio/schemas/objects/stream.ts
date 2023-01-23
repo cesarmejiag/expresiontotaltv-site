@@ -13,7 +13,7 @@ export default {
       type: 'array',
       title: 'Sponsors',
       of: [{type: 'sponsor'}],
-      validation: (Rule: any) => Rule.required().max(3),
+      validation: (Rule: any) => Rule.required().min(0).max(3),
     },
   ],
   preview: {

@@ -7,8 +7,8 @@ import RenderSections from "../components/renderSections";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = `
-  *[_id == "global-config"][0] {
-    frontpage -> {
+  *[_type == "route" && slug.current == $slug][0]{
+    page-> {
       ...,
       content[] {
         ...,
@@ -25,7 +25,7 @@ const pageQuery = `
   }
 `;
 
-export default function Home({ config, content }) {
+export default function Internal({ config, content }) {
   return (
     <Layout config={config}>
       {content && <RenderSections sections={content} />}
@@ -33,12 +33,18 @@ export default function Home({ config, content }) {
   );
 }
 
-Home.getInitialProps = async function () {
-  const res = await client.fetch(pageQuery);
-  return { ...res.frontpage, slug: "/" };
+Internal.getInitialProps = async function ({ query }) {
+  const { slug } = query;
+  if (!query) {
+    console.error("no query");
+    return;
+  }
+
+  const res = await client.fetch(pageQuery, { slug });
+  return { ...res.page, slug };
 };
 
-Home.propTypes = {
+Internal.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   // TODO: improve types

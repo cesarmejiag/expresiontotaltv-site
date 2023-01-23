@@ -23,7 +23,7 @@ export default function Carousel({ items, delay }) {
         spaceBetween={16}
       >
         {items.map((item) => (
-          <SwiperSlide key={item.alt}>
+          <SwiperSlide key={item._key}>
             <Sponsor image={item.mainImage} alt={item.altText} />
           </SwiperSlide>
         ))}

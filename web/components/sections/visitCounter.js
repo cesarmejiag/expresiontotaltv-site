@@ -9,7 +9,7 @@ const padZero = (number) => {
   return number;
 };
 
-export default function VisitCounter() {
+export default function VisitCounter({ type }) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     (async () => {
@@ -26,7 +26,7 @@ export default function VisitCounter() {
   }, []);
 
   return (
-    <Section>
+    <Section type={type}>
       <Box sx={{ margin: "0 auto", maxWidth: "300px", p: 2, width: "100%" }}>
         <Typography align="center" component="div" variant="h6">
           Visitors
