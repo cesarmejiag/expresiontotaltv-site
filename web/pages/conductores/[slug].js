@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import NextSeo from "next-seo";
 import imageUrlBuilder from "@sanity/image-url";
-import client from "../client";
-import Layout from "../components/layout";
-import RenderSections from "../components/renderSections";
+import Layout from "../../components/layout";
+import RenderSections from "../../components/renderSections";
+import client from "../../client";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = `
