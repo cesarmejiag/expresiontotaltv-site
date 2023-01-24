@@ -14,6 +14,7 @@ import sponsor from './objects/sponsor'
 import stream from './objects/stream'
 import visitCounter from './objects/visitCounter'
 import carousel from './objects/carousel'
+import plain from './objects/plain'
 
 export const schemaTypes = [
   embedHTML,
@@ -29,4 +30,5 @@ export const schemaTypes = [
   host,
   list,
   carousel,
+  plain,
 ]

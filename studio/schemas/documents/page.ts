@@ -18,7 +18,13 @@ export default {
       name: 'content',
       type: 'array',
       title: 'Page sections',
-      of: [{type: 'stream'}, {type: 'visitCounter'}, {type: 'carousel'}, {type: 'list'}],
+      of: [
+        {type: 'stream'},
+        {type: 'visitCounter'},
+        {type: 'carousel'},
+        {type: 'list'},
+        {type: 'plain'},
+      ],
     },
     {
       name: 'description',
