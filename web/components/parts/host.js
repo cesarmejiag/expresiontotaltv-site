@@ -10,13 +10,11 @@ import imageUrlBuilder from "@sanity/image-url";
 import client from "../../client";
 
 const builder = imageUrlBuilder(client);
-
 const trimText = (text = "", length = 80) => text.substring(0, length);
 
 export default function Host({ image, name, desc, url }) {
   const src = builder.image(image).url();
   return (
-    
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea href={url}>
         <CardMedia component="img" height="240" image={src} alt={name} />

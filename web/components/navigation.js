@@ -52,7 +52,12 @@ export default function Navigation({ navItems, logo }) {
           </ListItem>
         ))}
         <ListItem>
-          <ListItemButton sx={{ textAlign: "center" }}>
+          <ListItemButton
+            component="a"
+            href="https://www.calameo.com/read/007252869dd84e13727d0"
+            target="_blank"
+            sx={{ textAlign: "center" }}
+          >
             <ListItemText primary="Ver Revista"></ListItemText>
           </ListItemButton>
         </ListItem>
@@ -95,7 +100,11 @@ export default function Navigation({ navItems, logo }) {
                 {title}
               </Link>
             ))}
-            <Button href="/" variant="contained">
+            <Button
+              href="https://www.calameo.com/read/007252869dd84e13727d0"
+              target="_blank"
+              variant="contained"
+            >
               Ver Revista
             </Button>
           </Box>

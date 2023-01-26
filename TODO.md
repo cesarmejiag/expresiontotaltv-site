@@ -1,15 +1,14 @@
-# TODO List
-
+TODO List
+==========
 ## Studio
-
-- [ ] Make generate button works
+- [x] Make generate button works
 - [ ] Add google analytics link
-- [ ] Add magazine link
-- [ ] Add background tool
+- [x] Add magazine link
+- [ ] Add background input
 
 ## Web
-
 - [x] Make visit counter works
 - [ ] Configure carousel
 - [ ] Print all props in sections
 - [ ] Create carousel of hosts
+- [x] Add links to sponsors

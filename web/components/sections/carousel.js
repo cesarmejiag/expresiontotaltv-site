@@ -24,7 +24,12 @@ export default function Carousel({ items, delay }) {
       >
         {items.map((item) => (
           <SwiperSlide key={item._key}>
-            <Sponsor image={item.mainImage} alt={item.altText} />
+            <Sponsor
+              image={item.mainImage}
+              altText={item.altText}
+              caption={item.caption}
+              link={item.link}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
