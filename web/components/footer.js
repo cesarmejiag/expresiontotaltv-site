@@ -3,7 +3,7 @@ import { Box, Container, Grid } from "@mui/material";
 import Link from "next/link";
 import { useRouter, withRouter } from "next/router";
 import styles from "../styles/footer.module.css";
-import SimpleBlockContent from "./simple-block-content";
+import { PortableText } from "@portabletext/react";
 
 function Footer({ navItems, text }) {
   const { pathname, query } = useRouter();
@@ -13,7 +13,7 @@ function Footer({ navItems, text }) {
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} sm={6}>
             <Box sx={{ textAlign: { xs: "center", sm: "left" } }}>
-              <SimpleBlockContent blocks={text} />
+              <PortableText value={text} />
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>

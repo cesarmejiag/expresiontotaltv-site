@@ -84,8 +84,8 @@ export default {
     },
     {
       name: 'footerText',
-      type: 'simplePortableText',
-      fieldset: 'footer',
+      type: 'array',
+      of: [{type: 'block'}],
     },
   ],
 }
