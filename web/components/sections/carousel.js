@@ -8,18 +8,22 @@ import styles from "../../styles/sections/carousel.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import useResize from "../../hooks/useResize";
 
 // Reference: https://swiperjs.com/react
-export default function Carousel({ items, delay }) {
+export default function Carousel({ delay, items }) {
+  const { device } = useResize();
+  const spv = device === "desktop" ? 4 : device === "tablet" ? 3 : 1;
+
   return (
     <Section bgColor="#ffffff">
       <Swiper
         navigation
-        autoplay={{ delay: delay, disableOnInteraction: true }}
+        autoplay={{ delay: delay * 1000, disableOnInteraction: true }}
         className={styles.sponsors}
         loop={true}
         modules={[Autoplay, Navigation]}
-        slidesPerView={4}
+        slidesPerView={spv}
         spaceBetween={16}
       >
         {items.map((item) => (
@@ -38,11 +42,13 @@ export default function Carousel({ items, delay }) {
 }
 
 Carousel.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  autoplay: PropTypes.bool,
   delay: PropTypes.number,
+  items: PropTypes.arrayOf(PropTypes.object),
 };
 
 Carousel.defaultProps = {
+  autoplay: false,
+  delay: 3,
   items: [],
-  delay: 5000,
 };

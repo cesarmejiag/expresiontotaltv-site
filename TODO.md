@@ -8,7 +8,8 @@ TODO List
 
 ## Web
 - [x] Make visit counter works
-- [ ] Configure carousel
+- [x] Configure carousel
 - [ ] Print all props in sections
 - [ ] Create carousel of hosts
 - [x] Add links to sponsors
+- [ ] Create gallery of images
