@@ -4,26 +4,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import Layout from "../../components/layout";
 import client from "../../client";
 import RenderSections from "../../components/renderSections";
+import { getHostBySlug, getHosts } from "../../lib/api";
 
 const builder = imageUrlBuilder(client);
-const pageQuery = `
-  *[_type == "route" && slug.current == $slug][0]{
-    page-> {
-      ...,
-      content[] {
-        ...,
-        cta {
-          ...,
-          route->
-        },
-        ctas[] {
-          ...,
-          route->
-        }
-      }
-    }
-  }
-`;
 
 export default function Host({
   title,
@@ -75,7 +58,7 @@ export default function Host({
   );
 }
 
-Host.getInitialProps = async function ({ query }) {
+/* Host.getInitialProps = async function ({ query }) {
   const { slug } = query;
   if (!query) {
     console.error("no query");
@@ -83,8 +66,26 @@ Host.getInitialProps = async function ({ query }) {
   }
 
   const res = await client.fetch(pageQuery, { slug });
+  console.log(res);
   return { ...res.page, slug };
-};
+}; */
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const host = await getHostBySlug(slug);
+  console.log(host);
+  return { props: { foo: true } };
+}
+
+export async function getStaticPaths() {
+  const hosts = await getHosts();
+  return {
+    paths: hosts.map(({ slug }) => ({
+      params: { slug },
+    })),
+    fallback: false,
+  };
+}
 
 Host.propTypes = {
   title: PropTypes.string,

@@ -2,10 +2,10 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {MdDashboard, MdSettings} from 'react-icons/md'
+import {MdDashboard, MdSettings, MdLink, MdPerson} from 'react-icons/md'
 
 const hiddenDocTypes = (listItem: any) =>
-  !['page', 'route', 'site-config'].includes(listItem.getId())
+  !['page', 'route', 'site-config', 'host'].includes(listItem.getId())
 
 export default defineConfig({
   name: 'default',
@@ -25,15 +25,21 @@ export default defineConfig({
               .icon(MdSettings)
               .child(S.editor().id('config').schemaType('site-config').documentId('global-config')),
             S.listItem()
+              .title('Routes')
+              .icon(MdLink)
+              .schemaType('route')
+              .child(S.documentTypeList('route').title('Routes')),
+            ...S.documentTypeListItems().filter(hiddenDocTypes),
+            S.listItem()
               .title('Pages')
               .icon(MdDashboard)
               .schemaType('page')
               .child(S.documentTypeList('page').title('Pages')),
             S.listItem()
-              .title('Routes')
-              .schemaType('route')
-              .child(S.documentTypeList('route').title('Routes')),
-            ...S.documentTypeListItems().filter(hiddenDocTypes),
+              .title('Hosts')
+              .icon(MdPerson)
+              .schemaType('host')
+              .child(S.documentTypeList('host').title('Hosts')),
           ]),
     }),
     visionTool(),

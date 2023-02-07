@@ -61,13 +61,13 @@ export default function List({ items }) {
         </Grid>
       </Grid>
       <Grid container spacing={2}>
-        {filteredItems.map((item, index) => (
-          <Grid key={item._key} item xs={12} sm={6} md={3}>
+        {filteredItems.map((item) => (
+          <Grid key={item.slug.current} item xs={12} sm={6} md={3}>
             <Host
               image={item.image}
               name={item.name}
               desc={item.desc}
-              url="/"
+              url={`/conductores/${item.slug.current}`}
             />
           </Grid>
         ))}

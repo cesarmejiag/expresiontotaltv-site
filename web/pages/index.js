@@ -12,13 +12,8 @@ const pageQuery = `
       ...,
       content[] {
         ...,
-        cta {
-          ...,
-          route->
-        },
-        ctas[] {
-          ...,
-          route->
+        _type == "list" => {
+          items[] ->
         }
       }
     }

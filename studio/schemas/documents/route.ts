@@ -1,10 +1,7 @@
-import {MdLink} from 'react-icons/md'
-
 export default {
   name: 'route',
   type: 'document',
   title: 'Route',
-  icon: MdLink,
   fields: [
     {
       name: 'slug',

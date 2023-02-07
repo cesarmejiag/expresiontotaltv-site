@@ -2,9 +2,9 @@
 import page from './documents/page'
 import route from './documents/route'
 import siteConfig from './documents/siteConfig'
+import host from './documents/host'
 
 // Object types
-import host from './objects/host'
 import internalLink from './objects/internalLink'
 import link from './objects/link'
 import list from './objects/list'

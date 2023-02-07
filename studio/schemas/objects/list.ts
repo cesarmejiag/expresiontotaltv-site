@@ -7,7 +7,12 @@ export default {
       name: 'items',
       type: 'array',
       title: 'Items',
-      of: [{type: 'host'}],
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'host'}],
+        }
+      ],
     },
   ],
   preview: {

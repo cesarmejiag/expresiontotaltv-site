@@ -1,29 +1,14 @@
 export default {
   name: 'host',
   title: 'Host',
-  type: 'object',
+  type: 'document',
   fields: [
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-    },
-    {
-      name: 'name',
-      title: 'Name',
-      type: 'string',
-    },
-    {
-      name: 'desc',
-      title: 'Description',
-      type: 'string',
-    },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: (doc: any, context: any) => context.parent.name,
+        source: 'name',
         maxLength: 200,
         slugify: (input: any) =>
           input
@@ -38,9 +23,22 @@ export default {
       },
     },
     {
-      name: 'link',
-      title: 'Link',
-      type: 'url',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
+      name: 'desc',
+      title: 'Description',
+      type: 'string',
     },
   ],
 }
