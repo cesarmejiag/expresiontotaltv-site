@@ -6,6 +6,7 @@ import path from "path";
 export default function handler(req, res) {
   const filePath = path.resolve(__dirname, "../../../../db/", "counter.txt");
   let count = 42873;
+  let message;
 
   if (fs.existsSync(filePath)) {
     try {
@@ -14,7 +15,8 @@ export default function handler(req, res) {
       fs.writeFileSync(filePath, String(count));
     } catch (err) {
       console.log(err);
+      message = err;
     }
   }
-  res.status(200).json({ success: true, count });
+  res.status(200).json({ success: true, count, message });
 }
