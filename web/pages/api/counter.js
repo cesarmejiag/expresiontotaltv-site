@@ -14,7 +14,7 @@ export default function handler(req, res) {
     const data = fs.readFileSync(filePath, "utf-8");
     const count = Number(data) + 1;
     fs.writeFileSync(filePath, String(count));
-    res.status(200).json({ success: true, data });
+    res.status(200).json({ success: true, count });
   } catch (err) {
     res.status(500).json({ success: false, message: err });
   }
