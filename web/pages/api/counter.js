@@ -2,9 +2,8 @@
 import fs from "fs";
 import path from "path";
 
-// Count visits.
 export default function handler(req, res) {
-  const filePath = path.resolve("./counter.txt");
+  /* const filePath = path.resolve("./counter.txt");
 
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, String(428739));
@@ -17,5 +16,6 @@ export default function handler(req, res) {
     res.status(200).json({ success: true, count });
   } catch (err) {
     res.status(500).json({ success: false, message: err });
-  }
+  } */
+  res.status(200).json({ success: true, count: 428739 });
 }
