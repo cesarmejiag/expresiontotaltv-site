@@ -24,9 +24,7 @@ export default function RenderSections({ sections }) {
         if (!SectionComponent) {
           return <div key={section._key}>Missing section {section._type}</div>;
         }
-        return (
-          <SectionComponent {...section} type={section._type} key={section._key} />
-        );
+        return <SectionComponent {...section} key={section._key} />;
       })}
     </Fragment>
   );

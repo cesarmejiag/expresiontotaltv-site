@@ -5,7 +5,7 @@ import path from "path";
 // Count visits.
 export default function handler(req, res) {
   const filePath = path.resolve(__dirname, "../../../../db/", "counter.txt");
-  let count = 42873;
+  let count = 43173;
   let message;
 
   if (fs.existsSync(filePath)) {
@@ -13,6 +13,7 @@ export default function handler(req, res) {
       const data = fs.readFileSync(filePath, "utf-8");
       count = Number(data) + 1;
       fs.writeFileSync(filePath, String(count));
+      message = "ok";
     } catch (err) {
       console.log(err);
       message = err;

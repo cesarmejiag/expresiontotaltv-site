@@ -16,7 +16,7 @@ export default function Carousel({ delay, items }) {
   const spv = device === "desktop" ? 4 : device === "tablet" ? 3 : 1;
 
   return (
-    <Section bgColor="#ffffff">
+    <Section>
       <Swiper
         navigation
         autoplay={{ delay: delay * 1000, disableOnInteraction: true }}

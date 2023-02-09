@@ -1,45 +1,43 @@
-import { useEffect, useState } from "react";
-import { Box, Typography } from "@mui/material";
-import Section from "../section";
+import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import Counter from "../objects/counter";
+import useFetch from "@/hooks/useFetch";
 
-const padZero = (number) => {
-  if (!isNaN(number)) {
-    return `00${number}`.slice(-7);
+export default function VisitCounter({ title }) {
+  const { loading, data, error } = useFetch("/api/counter");
+  const to = data?.count || 0;
+  if (error) {
+    console.log(error);
   }
-  return number;
-};
-
-export default function VisitCounter({ type }) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    (async () => {
-      try {
-        const data = await fetch("/api/counter");
-        const json = await data.json();
-        if (json.success) {
-          setCount(json.count);
-        }
-      } catch (err) {
-        console.log(`Counter: Can't retrieve count from server.\n${err}`);
-      }
-    })();
-  }, []);
 
   return (
-    <Section type={type}>
-      <Box sx={{ margin: "0 auto", maxWidth: "300px", p: 2, width: "100%" }}>
-        <Typography align="center" component="div" variant="h6">
-          Visitors
-        </Typography>
-        <Typography
-          align="center"
-          component="div"
-          variant="h6"
-          sx={{ letterSpacing: "10px" }}
-        >
-          {padZero(count)}
-        </Typography>
+    <Container sx={{ py: 2 }}>
+      <Box
+        sx={{
+          margin: "0 auto",
+          maxWidth: "300px",
+          width: "100%",
+        }}
+      >
+        <Card>
+          <CardContent>
+            <Typography align="center" component="div">
+              <VisibilityIcon fontSize="large" />
+            </Typography>
+            <Typography
+              align="center"
+              component="div"
+              variant="h4"
+              sx={{ letterSpacing: "5px" }}
+            >
+              <Counter to={to} refreshInterval={50} />
+            </Typography>
+            <Typography align="center" component="div" variant="caption">
+              {title}
+            </Typography>
+          </CardContent>
+        </Card>
       </Box>
-    </Section>
+    </Container>
   );
 }

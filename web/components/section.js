@@ -2,12 +2,19 @@ import { Container, Grid, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import styles from "../styles/section.module.css";
 
-export default function Section({ title, intro, bgColor, type, children }) {
-  const mySx = type ? { pt: { xs: 3, sm: 3 } } : { py: { xs: 5, sm: 7 } };
+const getBgColorStyle = (bgColor) => {
+  if (!bgColor || typeof bgColor !== "object") {
+    return {};
+  }
+  const { r, g, b, a } = bgColor;
+  return { backgroundColor: `rgba(${r},${g},${b},${a})` };
+};
 
+export default function Section({ title, intro, bgColor, children }) {
+  const bgColorStyle = getBgColorStyle(bgColor?.rgb);
   return (
-    <div className={styles.section} style={{ backgroundColor: bgColor }}>
-      <Container maxWidth="lg" sx={mySx}>
+    <div className={styles.section} style={{ ...bgColorStyle }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 5, sm: 7 } }}>
         {(title || intro) && (
           <Grid className="header" sx={{ mb: { xs: 3, sm: 4 } }}>
             {title && (
@@ -27,10 +34,6 @@ export default function Section({ title, intro, bgColor, type, children }) {
 Section.propTypes = {
   title: PropTypes.string,
   intro: PropTypes.string,
-  bgColor: PropTypes.string,
+  bgColor: PropTypes.object,
   children: PropTypes.any,
-};
-
-Section.defaultProps = {
-  bgColor: "transparent",
 };

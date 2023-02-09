@@ -11,7 +11,7 @@ export default function Stream({ src, sponsors }) {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={9}>
           <Card className={styles.video}>
-            {src.length > 0 && (
+            {src.length > 0 && false && (
               <CardMedia
                 className={styles.iframe}
                 component="iframe"

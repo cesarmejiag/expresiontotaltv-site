@@ -1,6 +1,7 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
+import {colorInput} from '@sanity/color-input'
 import {schemaTypes} from './schemas'
 import {MdDashboard, MdSettings, MdLink, MdPerson} from 'react-icons/md'
 
@@ -43,6 +44,7 @@ export default defineConfig({
           ]),
     }),
     visionTool(),
+    colorInput()
   ],
 
   schema: {
