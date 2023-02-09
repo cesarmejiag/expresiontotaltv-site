@@ -18,6 +18,8 @@ export default function handler(req, res) {
       console.log(err);
       message = "somethings happen";
     }
+  } else {
+    message = "file does not exist"
   }
   res.status(200).json({ success: true, count, message });
 }
