@@ -16,7 +16,7 @@ export default function handler(req, res) {
       message = "ok";
     } catch (err) {
       console.log(err);
-      message = err;
+      message = "somethings happen";
     }
   }
   res.status(200).json({ success: true, count, message });
