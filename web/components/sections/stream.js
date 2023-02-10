@@ -35,9 +35,9 @@ export default function Stream({ src, sponsors }) {
         </Grid>
         <Grid item xs={12} sm={3}>
           <Grid container spacing={2}>
-            {sponsors.map(({ _key, mainImage, altText }) => (
+            {sponsors.map(({ _key, mainImage, altText, link }) => (
               <Grid key={_key} item xs={12}>
-                <Sponsor image={mainImage} alt={altText} />
+                <Sponsor image={mainImage} alt={altText} link={link} />
               </Grid>
             ))}
           </Grid>
