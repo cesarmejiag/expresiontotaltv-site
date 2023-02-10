@@ -1,5 +1,4 @@
 import { Card, CardActionArea, CardMedia, Typography } from "@mui/material";
-import { style } from "@mui/system";
 import imageUrlBuilder from "@sanity/image-url";
 import PropTypes from "prop-types";
 import client from "../client";
