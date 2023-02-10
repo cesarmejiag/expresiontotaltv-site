@@ -15,7 +15,15 @@ a {
   box-sizing: border-box;
 }
 
-.image-wrapper {
+.rounded-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.rounded-image::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .image-wrapper img {

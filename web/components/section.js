@@ -14,7 +14,7 @@ export default function Section({ title, intro, bgColor, children }) {
   const bgColorStyle = getBgColorStyle(bgColor?.rgb);
   return (
     <div className={styles.section} style={{ ...bgColorStyle }}>
-      <Container maxWidth="lg" sx={{ py: { xs: 5, sm: 7 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 3, sm: 5 } }}>
         {(title || intro) && (
           <Grid className="header" sx={{ mb: { xs: 3, sm: 4 } }}>
             {title && (
