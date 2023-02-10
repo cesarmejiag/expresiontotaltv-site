@@ -13,6 +13,7 @@ import stream from './objects/stream'
 import visitCounter from './objects/visitCounter'
 import carousel from './objects/carousel'
 import plain from './objects/plain'
+import gallery from './objects/gallery'
 
 export const schemaTypes = [
   internalLink,
@@ -27,4 +28,5 @@ export const schemaTypes = [
   list,
   carousel,
   plain,
+  gallery
 ]

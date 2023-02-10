@@ -4,8 +4,10 @@ import Counter from "../objects/counter";
 import useFetch from "@/hooks/useFetch";
 
 export default function VisitCounter({ title }) {
-  const { loading, data, error } = useFetch("/api/counter");
-  const to = data?.count || 0;
+  const { loading, data, error } = useFetch(
+    "https://cyborgconsulting.com.mx/fragment/themes/cyborgconsulting/counter.php"
+  );
+  const to = data?.data?.count || 0;
   if (error) {
     console.log(error);
   }

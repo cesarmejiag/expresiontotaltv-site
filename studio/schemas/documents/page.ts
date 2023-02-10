@@ -24,6 +24,7 @@ export default {
         {type: 'carousel'},
         {type: 'list'},
         {type: 'plain'},
+        {type: 'gallery'},
       ],
     },
     {
