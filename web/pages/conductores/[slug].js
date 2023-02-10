@@ -73,8 +73,7 @@ export default function Host({
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const host = await getHostBySlug(slug);
-  console.log(host);
-  return { props: { foo: true } };
+  return { props: { ...host } };
 }
 
 export async function getStaticPaths() {

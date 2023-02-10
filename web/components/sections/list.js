@@ -65,8 +65,8 @@ export default function List({ items }) {
           <Grid key={item.slug.current} item xs={12} sm={6} md={3}>
             <Host
               image={item.image}
-              name={item.name}
-              desc={item.desc}
+              name={item.title}
+              desc={item.intro}
               url={`/conductores/${item.slug.current}`}
             />
           </Grid>
