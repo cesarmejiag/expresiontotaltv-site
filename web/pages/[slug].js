@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useContext } from "react";
+import { Globals } from "@/context/context";
 import PropTypes from "prop-types";
 import { NextSeo } from "next-seo";
 import imageUrlBuilder from "@sanity/image-url";
@@ -12,14 +15,6 @@ const pageQuery = `
       ...,
       content[] {
         ...,
-        cta {
-          ...,
-          route->
-        },
-        ctas[] {
-          ...,
-          route->
-        }
       }
     }
   }
@@ -33,7 +28,13 @@ export default function Internal({
   content = [],
   config = {},
   slug,
+  visitCount,
 }) {
+  const { setGlobals } = useContext(Globals);
+  useEffect(() => {
+    setGlobals((globals) => ({ ...globals, visitCount }));
+  }, []);
+
   const openGraphImages = openGraphImage
     ? [
         {
@@ -62,7 +63,7 @@ export default function Internal({
     <Layout config={config}>
       <NextSeo
         title={title}
-        titleTemplate={`${config.title} | %s`}
+        titleTemplate={`%s | ${config.title}`}
         description={description}
         canonical={config.url && `${config.url}/${slug}`}
         openGraph={{

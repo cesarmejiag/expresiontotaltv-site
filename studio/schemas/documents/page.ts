@@ -25,6 +25,7 @@ export default {
         {type: 'list'},
         {type: 'plain'},
         {type: 'gallery'},
+        {type: 'videos'},
       ],
     },
     {

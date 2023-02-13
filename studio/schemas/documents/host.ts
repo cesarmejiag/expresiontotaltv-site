@@ -44,7 +44,7 @@ export default {
     {
       name: 'intro',
       title: 'Intro',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'content',
@@ -57,6 +57,7 @@ export default {
         {type: 'list'},
         {type: 'plain'},
         {type: 'gallery'},
+        {type: 'videos'},
       ],
     },
     {

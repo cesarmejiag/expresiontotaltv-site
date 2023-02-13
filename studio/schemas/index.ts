@@ -4,6 +4,9 @@ import route from './documents/route'
 import siteConfig from './documents/siteConfig'
 import host from './documents/host'
 
+// Sections
+import videos from './section/videos'
+
 // Object types
 import internalLink from './objects/internalLink'
 import link from './objects/link'
@@ -14,6 +17,7 @@ import visitCounter from './objects/visitCounter'
 import carousel from './objects/carousel'
 import plain from './objects/plain'
 import gallery from './objects/gallery'
+import video from './objects/video'
 
 export const schemaTypes = [
   internalLink,
@@ -28,5 +32,7 @@ export const schemaTypes = [
   list,
   carousel,
   plain,
-  gallery
+  gallery,
+  video,
+  videos,
 ]

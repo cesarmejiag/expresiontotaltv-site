@@ -6,7 +6,10 @@ export default {
   title: 'Site configuration',
   // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
   __experimental_action: [/*"create", "delete",*/ 'update', 'publish'],
-  fieldsets: [{name: 'footer', title: 'Footer'}],
+  fieldsets: [
+    {name: 'bg', title: 'Background'},
+    {name: 'footer', title: 'Footer'},
+  ],
   fields: [
     {
       name: 'title',
@@ -49,6 +52,20 @@ export default {
           },
         },
       ],
+    },
+    {
+      name: 'bgImage',
+      title: 'Background Image',
+      type: 'image',
+      description: 'Background image for all pages.',
+      fieldset: 'bg',
+    },
+    {
+      name: 'bgPattern',
+      title: 'As pattern',
+      type: 'boolean',
+      description: 'Use background image as pattern',
+      fieldset: 'bg',
     },
     {
       title: 'Main navigation',

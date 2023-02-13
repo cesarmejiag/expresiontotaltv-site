@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useContext } from "react";
+import { Globals } from "@/context/context";
 import PropTypes from "prop-types";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
@@ -20,7 +23,13 @@ export default function Host({
   content = [],
   config = {},
   slug,
+  visitCount,
 }) {
+  const { setGlobals } = useContext(Globals);
+  useEffect(() => {
+    setGlobals((globals) => ({ ...globals, visitCount }));
+  }, []);
+
   const openGraphImages = openGraphImage
     ? [
         {
@@ -49,7 +58,7 @@ export default function Host({
     <Layout config={config}>
       <NextSeo
         title={title}
-        titleTemplate={`${config.title} | %s`}
+        titleTemplate={`%s | ${config.title}`}
         description={description}
         canonical={config.url && `${config.url}/${slug}`}
         openGraph={{
@@ -72,6 +81,7 @@ export default function Host({
           >
             <div className="rounded-image">
               <Image
+                alt={title}
                 src={builder.image(image).height(500).width(500).url()}
                 fill="cover"
               />

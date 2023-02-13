@@ -1,4 +1,7 @@
+import imageUrlBuilder from "@sanity/image-url";
 import client from "../client";
+
+const builder = imageUrlBuilder(client);
 
 export async function getHosts() {
   return await client.fetch(`
@@ -34,4 +37,11 @@ export async function getVisitCount() {
   } catch (err) {
     return 0;
   }
+}
+
+export function urlFor(image) {
+  if (image) {
+    return builder.image(image);
+  }
+  return false;
 }

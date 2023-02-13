@@ -67,7 +67,7 @@ export default function Home({
     <Layout config={config}>
       <NextSeo
         title={title}
-        titleTemplate={`${config.title} | %s`}
+        titleTemplate={`%s | ${config.title}`}
         description={description}
         canonical={config.url && `${config.url}/${slug}`}
         openGraph={{

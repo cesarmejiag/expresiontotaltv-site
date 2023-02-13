@@ -1,10 +1,13 @@
 TODO List
 ==========
+
 ## Studio
 - [x] Make generate button works
 - [ ] Add google analytics link
 - [x] Add magazine link
-- [ ] Add background input
+- [x] Add background input
+- [ ] Agregar botón al editor ver revistas - debe ir al carrusel
+- [x] Crear video component
 
 ## Web
 - [x] Make visit counter works
@@ -13,8 +16,4 @@ TODO List
 - [ ] Create carousel of hosts
 - [x] Add links to sponsors
 - [x] Create gallery of images
-
-
-1. Video con descripción
-2. Agregar botón al editor ver revistas - debe ir al carrusel
-3. 
+- [x] Video con descripción
