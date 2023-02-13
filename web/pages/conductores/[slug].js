@@ -94,18 +94,6 @@ export default function Host({
   );
 }
 
-/* Host.getInitialProps = async function ({ query }) {
-  const { slug } = query;
-  if (!query) {
-    console.error("no query");
-    return;
-  }
-
-  const res = await client.fetch(pageQuery, { slug });
-  console.log(res);
-  return { ...res.page, slug };
-}; */
-
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const host = await getHostBySlug(slug);

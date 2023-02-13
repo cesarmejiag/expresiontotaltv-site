@@ -12,4 +12,9 @@ TODO List
 - [ ] Print all props in sections
 - [ ] Create carousel of hosts
 - [x] Add links to sponsors
-- [ ] Create gallery of images
+- [x] Create gallery of images
+
+
+1. Video con descripción
+2. Agregar botón al editor ver revistas - debe ir al carrusel
+3. 

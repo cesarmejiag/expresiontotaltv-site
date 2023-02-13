@@ -14,9 +14,10 @@ export default {
       title: 'title',
     },
     prepare({title}: any) {
+      const name = 'Visit counter'
       return {
-        title,
-        subtitle: 'Visit counter section',
+        title: title || name,
+        subtitle: `${name} section`,
       }
     },
   },

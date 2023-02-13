@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import { Globals } from "@/context/context";
 import PropTypes from "prop-types";
 import { NextSeo } from "next-seo";
 import imageUrlBuilder from "@sanity/image-url";
 import Layout from "../components/layout";
 import client from "../client";
 import RenderSections from "../components/renderSections";
+import { useEffect } from "react";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = `
@@ -28,7 +31,13 @@ export default function Home({
   content = [],
   config = {},
   slug,
+  visitCount,
 }) {
+  const { setGlobals } = useContext(Globals);
+  useEffect(() => {
+    setGlobals((globals) => ({ ...globals, visitCount }));
+  }, []);
+
   const openGraphImages = openGraphImage
     ? [
         {

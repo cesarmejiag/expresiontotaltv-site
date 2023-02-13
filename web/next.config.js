@@ -9,6 +9,7 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  env: {},
 };
 
 module.exports = nextConfig;

@@ -82,7 +82,6 @@ Internal.getInitialProps = async function ({ query }) {
     return;
   }
   const res = await client.fetch(pageQuery, { slug });
-  console.log(res);
   return { ...res.page, slug };
 };
 

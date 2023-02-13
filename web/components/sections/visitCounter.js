@@ -1,17 +1,11 @@
+import { useContext } from "react";
+import { Globals } from "@/context/context";
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Counter from "../objects/counter";
-import useFetch from "@/hooks/useFetch";
 
 export default function VisitCounter({ title }) {
-  const { loading, data, error } = useFetch(
-    "https://cyborgconsulting.com.mx/fragment/themes/cyborgconsulting/counter.php"
-  );
-  const to = data?.data?.count || 0;
-  if (error) {
-    console.log(error);
-  }
-
+  const { globals } = useContext(Globals);
   return (
     <Container sx={{ py: 2 }}>
       <Box
@@ -32,7 +26,7 @@ export default function VisitCounter({ title }) {
               variant="h4"
               sx={{ letterSpacing: "5px" }}
             >
-              <Counter to={to} refreshInterval={50} />
+              <Counter to={globals?.visitCount || 0} refreshInterval={50} />
             </Typography>
             <Typography align="center" component="div" variant="caption">
               {title}
