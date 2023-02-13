@@ -19,7 +19,7 @@ import styles from "../styles/navigation.module.css";
 
 const drawerWidth = 240;
 
-export default function Navigation({ navItems, logo }) {
+export default function Navigation({ navItems, logo, magazineUrl }) {
   const logoSrc = logo && logo.asset && logo.asset.url;
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
@@ -51,16 +51,18 @@ export default function Navigation({ navItems, logo }) {
             </ListItemButton>
           </ListItem>
         ))}
-        <ListItem>
-          <ListItemButton
-            component="a"
-            href="https://www.calameo.com/read/007252869dd84e13727d0"
-            target="_blank"
-            sx={{ textAlign: "center" }}
-          >
-            <ListItemText primary="Ver Revista"></ListItemText>
-          </ListItemButton>
-        </ListItem>
+        {magazineUrl && (
+          <ListItem>
+            <ListItemButton
+              component="a"
+              href={magazineUrl}
+              target="_blank"
+              sx={{ textAlign: "center" }}
+            >
+              <ListItemText primary="Ver Revista"></ListItemText>
+            </ListItemButton>
+          </ListItem>
+        )}
       </List>
     </Box>
   );
@@ -100,13 +102,11 @@ export default function Navigation({ navItems, logo }) {
                 {title}
               </Link>
             ))}
-            <Button
-              href="https://www.calameo.com/read/007252869dd84e13727d0"
-              target="_blank"
-              variant="contained"
-            >
-              Ver Revista
-            </Button>
+            {magazineUrl && (
+              <Button href={magazineUrl} target="_blank" variant="contained">
+                Ver Revista
+              </Button>
+            )}
           </Box>
           <IconButton
             color="inherit"

@@ -104,5 +104,10 @@ export default {
       type: 'array',
       of: [{type: 'block'}],
     },
+    {
+      name:'magazineUrl',
+      type: 'url',
+      title: 'Magazine URL'
+    }
   ],
 }

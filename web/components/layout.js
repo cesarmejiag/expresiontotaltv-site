@@ -10,8 +10,15 @@ export default function Layout({ config, children }) {
     return <div>Missing config</div>;
   }
 
-  const { title, mainNavigation, footerNavigation, footerText, logo, url } =
-    config;
+  const {
+    title,
+    mainNavigation,
+    footerNavigation,
+    footerText,
+    logo,
+    url,
+    magazineUrl,
+  } = config;
 
   return (
     <>
@@ -39,7 +46,11 @@ export default function Layout({ config, children }) {
             `,
         }}
       />
-      <Navigation navItems={mainNavigation} logo={logo} />
+      <Navigation
+        navItems={mainNavigation}
+        logo={logo}
+        magazineUrl={magazineUrl}
+      />
       <div className={styles.outerWrapper}>{children}</div>
       <Footer navItems={footerNavigation} text={footerText} />
     </>
