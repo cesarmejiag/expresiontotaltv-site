@@ -35,7 +35,8 @@ App.getInitialProps = async function ({ Component, ctx }) {
   }
 
   // Attach visitCount.
-  pageProps.visitCount = await getVisitCount();
+  // pageProps.visitCount = await getVisitCount();
+  pageProps.visitCount = 421876;
 
   // Add site config from sanity.
   const config = await client.fetch(siteConfigQuery);

@@ -9,7 +9,7 @@ import Layout from "../../components/layout";
 import client from "../../client";
 import RenderSections from "../../components/renderSections";
 import { getHostBySlug, getHosts } from "../../lib/api";
-import { Box, Container, Divider, Grid, Typography } from "@mui/material";
+import { Box, Container, Divider, Typography } from "@mui/material";
 
 const builder = imageUrlBuilder(client);
 
