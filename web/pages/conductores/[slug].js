@@ -104,13 +104,13 @@ export default function Host({
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { slug } = params;
   const host = await getHostBySlug(slug);
   return { props: { ...host } };
 }
 
-export async function getStaticPaths() {
+/* export async function getStaticPaths() {
   const hosts = await getHosts();
   return {
     paths: hosts.map(({ slug }) => ({
@@ -118,7 +118,7 @@ export async function getStaticPaths() {
     })),
     fallback: false,
   };
-}
+} */
 
 Host.propTypes = {
   title: PropTypes.string,
