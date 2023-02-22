@@ -1,5 +1,4 @@
 import Context from "@/context/context";
-import { getVisitCount } from "@/lib/api";
 import client from "../client";
 
 import "../styles/globals.css";
