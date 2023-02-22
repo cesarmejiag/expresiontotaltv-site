@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   try {
     const data = await fs.readFile(filePath, "utf-8");
     const count = parseInt(data, 10);
-    await fs.writeFile(filePath, String(count + 1));
+    // await fs.writeFile(filePath, String(count + 1));
     res.status(200).json({ success: true, data: { count } });
   } catch (err) {
     res
