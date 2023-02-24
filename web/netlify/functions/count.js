@@ -10,7 +10,6 @@ exports.handler = async function (event, context) {
     {
       host: process.env.INSTANCE_HOST,
       dialect: "mysql",
-      dialectModule: mysql2,
     }
   );
 
