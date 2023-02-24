@@ -1,6 +1,6 @@
-/* import Visit from "@/db/models/Visit";
+import Visit from "@/db/models/Visit";
 
-export default async function handler(req, res) {
+/* export default async function handler(req, res) {
   try {
     const result = await Visit.findAll({
       limit: 1,
@@ -25,8 +25,5 @@ export default async function handler(req, res) {
 export default async function handler(req, res) {
   res.status(200).json({
     success: true,
-    data: {
-      something: process.env.INSTANCE_HOST,
-    },
   });
 }
