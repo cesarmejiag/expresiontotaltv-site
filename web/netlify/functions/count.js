@@ -1,6 +1,25 @@
-import Visit from "@/db/models/Visit";
+import { Sequelize, DataTypes } from "sequelize";
 
 exports.handler = async function (event, context) {
+  // Connect with database.
+  const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASS,
+    {
+      host: process.env.INSTANCE_HOST,
+      dialect: "mysql",
+    }
+  );
+
+  // Define model.
+  const Visit = sequelize.define(
+    "Visit",
+    { count: { type: DataTypes.DOUBLE } },
+    { tableName: "Visits" }
+  );
+
+  // Query last count and update.
   try {
     const result = await Visit.findAll({
       limit: 1,
