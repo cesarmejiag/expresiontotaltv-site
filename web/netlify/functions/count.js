@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
+const mysql2 = require("mysql2");
 
 exports.handler = async function (event, context) {
   // Connect with database.
@@ -9,6 +10,7 @@ exports.handler = async function (event, context) {
     {
       host: process.env.INSTANCE_HOST,
       dialect: "mysql",
+      dialectModule: mysql2,
     }
   );
 
