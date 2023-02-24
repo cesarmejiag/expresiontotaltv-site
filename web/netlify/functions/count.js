@@ -1,4 +1,4 @@
-import { Sequelize, DataTypes } from "sequelize";
+const { Sequelize, DataTypes } = require("sequelize");
 
 exports.handler = async function (event, context) {
   // Connect with database.
