@@ -1,4 +1,4 @@
-import Visit from "@/db/models/Visit";
+/* import Visit from "@/db/models/Visit";
 
 export default async function handler(req, res) {
   try {
@@ -20,4 +20,13 @@ export default async function handler(req, res) {
   } catch (err) {
     res.status(200).json({ success: false, message: err.message });
   }
+} */
+
+export default async function handler(req, res) {
+  res.status(200).json({
+    success: true,
+    data: {
+      something: process.env.INSTANCE_HOST,
+    },
+  });
 }
