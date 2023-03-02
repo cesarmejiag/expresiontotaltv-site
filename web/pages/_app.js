@@ -1,5 +1,6 @@
 import Context from "@/context/context";
 import client from "../client";
+import { getVisitCount } from "@/lib/api";
 
 import "../styles/globals.css";
 
@@ -34,8 +35,8 @@ App.getInitialProps = async function ({ Component, ctx }) {
   }
 
   // Attach visitCount.
-  // pageProps.visitCount = await getVisitCount();
-  pageProps.visitCount = 421876;
+  pageProps.visitCount = await getVisitCount();
+  // pageProps.visitCount = 421876;
 
   // Add site config from sanity.
   const config = await client.fetch(siteConfigQuery);

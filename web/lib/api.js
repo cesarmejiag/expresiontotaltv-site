@@ -19,8 +19,7 @@ export async function getHostBySlug(slug) {
 }
 
 export async function getVisitCount() {
-  const endpoint =
-    "https://cyborgconsulting.com.mx/fragment/themes/cyborgconsulting/counter.php";
+  const endpoint = "https://sonic-platform-375917.uc.r.appspot.com/api/count";
 
   try {
     const data = await fetch(endpoint);
