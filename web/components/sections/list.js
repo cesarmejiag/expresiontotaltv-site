@@ -26,7 +26,7 @@ import useResize from "../../hooks/useResize";
         ))}
  */
 
-export default function List({ items }) {
+export default function List({ autoplay, delay = 3000, items }) {
   const { device } = useResize();
   const spv = device === "desktop" ? 4 : device === "tablet" ? 3 : 1;
 
@@ -43,8 +43,6 @@ export default function List({ items }) {
       setFilteredItems(items);
     }
   };
-
-  const delay = 3000;
 
   return (
     <Section title="Conductores">

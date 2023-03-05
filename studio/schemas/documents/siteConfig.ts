@@ -9,6 +9,7 @@ export default {
   fieldsets: [
     {name: 'bg', title: 'Background'},
     {name: 'footer', title: 'Footer'},
+    {name: 'magazineBtn', title: 'Magazine Button'},
   ],
   fields: [
     {
@@ -105,9 +106,22 @@ export default {
       of: [{type: 'block'}],
     },
     {
-      name:'magazineUrl',
+      name: 'magazineUrl',
       type: 'url',
-      title: 'Magazine URL'
-    }
+      title: 'Magazine URL',
+      fieldset: 'magazineBtn',
+    },
+    {
+      name: 'magazineLabel',
+      type: 'string',
+      title: 'Magazine Label',
+      fieldset: 'magazineBtn',
+    },
+    {
+      name: 'magazineColor',
+      type: 'color',
+      title: 'Magazine Color',
+      fieldset: 'magazineBtn',
+    },
   ],
 }

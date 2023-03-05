@@ -18,6 +18,8 @@ export default function Layout({ config, children }) {
     logo,
     url,
     magazineUrl,
+    magazineLabel,
+    magazineColor,
   } = config;
 
   return (
@@ -50,6 +52,8 @@ export default function Layout({ config, children }) {
         navItems={mainNavigation}
         logo={logo}
         magazineUrl={magazineUrl}
+        magazineLabel={magazineLabel}
+        magazineColor={magazineColor}
       />
       <div className={styles.outerWrapper}>{children}</div>
       <Footer navItems={footerNavigation} text={footerText} />

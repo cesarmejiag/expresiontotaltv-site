@@ -19,7 +19,13 @@ import styles from "../styles/navigation.module.css";
 
 const drawerWidth = 240;
 
-export default function Navigation({ navItems, logo, magazineUrl }) {
+export default function Navigation({
+  navItems,
+  logo,
+  magazineUrl,
+  magazineLabel,
+  magazineColor,
+}) {
   const logoSrc = logo && logo.asset && logo.asset.url;
   const [mobileOpen, setMobileOpen] = useState(false);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
@@ -58,8 +64,11 @@ export default function Navigation({ navItems, logo, magazineUrl }) {
               href={magazineUrl}
               target="_blank"
               sx={{ textAlign: "center" }}
+              style={{ backgroundColor: magazineColor?.hex || "#1976d2" }}
             >
-              <ListItemText primary="Ver Revista"></ListItemText>
+              <ListItemText
+                primary={magazineLabel || "Ver Revista"}
+              ></ListItemText>
             </ListItemButton>
           </ListItem>
         )}
@@ -103,8 +112,13 @@ export default function Navigation({ navItems, logo, magazineUrl }) {
               </Link>
             ))}
             {magazineUrl && (
-              <Button href={magazineUrl} target="_blank" variant="contained">
-                Ver Revista
+              <Button
+                href={magazineUrl}
+                target="_blank"
+                variant="contained"
+                style={{ backgroundColor: magazineColor?.hex || "#1976d2" }}
+              >
+                {magazineLabel || "Ver Revista"}
               </Button>
             )}
           </Box>
