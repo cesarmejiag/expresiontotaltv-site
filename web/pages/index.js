@@ -33,6 +33,8 @@ export default function Home({
   slug,
   visitCount,
 }) {
+  return "No page";
+  
   const { setGlobals } = useContext(Globals);
   useEffect(() => {
     setGlobals((globals) => ({ ...globals, visitCount }));

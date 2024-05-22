@@ -34,6 +34,7 @@ export default function Internal({
   useEffect(() => {
     setGlobals((globals) => ({ ...globals, visitCount }));
   }, []);
+  return "No page.";
 
   const openGraphImages = openGraphImage
     ? [
